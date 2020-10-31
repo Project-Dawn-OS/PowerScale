@@ -38,6 +38,7 @@ pub fn build(b: *Builder) void {
     exe.setLinkerScriptPath("src/Zig-PSP/tools/linkfile.ld");
     exe.link_eh_frame_hdr = true;
     exe.link_emit_relocs = true;
+    exe.single_threaded = true;
 
     //Post-build actions
     const hostTarget = b.standardTargetOptions(.{});
